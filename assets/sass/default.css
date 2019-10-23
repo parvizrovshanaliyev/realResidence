@@ -1,2 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round&display=swap");
+.searchBar--social--links li:first-child a i {
+  color: red;
+}
 /*# sourceMappingURL=default.css.map */
