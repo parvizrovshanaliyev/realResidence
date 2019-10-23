@@ -1,11 +1,12 @@
 {
     "version": 3,
-    "mappings": "AAGA,OAAO,CAAC,wEAAI;AAEZ,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,MAAM;CAC3B",
+    "mappings": "AAGA,OAAO,CAAC,wEAAI",
     "sources": [
         "default.scss",
         "partials/_variables.scss",
         "partials/_mixin.scss",
-        "partials/_home.scss"
+        "partials/_home.scss",
+        "partials/home/_header.scss"
     ],
     "names": [],
     "file": "default.css"
