@@ -16,6 +16,9 @@ const fileinclude = require('gulp-file-include');
 const babel = require('gulp-babel');
 const include = require('gulp-include')
 const rename = require("gulp-rename");
+const importCss = require('gulp-import-css');
+const cnf = require('./package.json').config;
+const cssnano = require('gulp-cssnano');
 // const cssnano = require('cssnano');
 
 // Static server
@@ -116,11 +119,32 @@ gulp.task('img', () => {
 
 gulp.task('lib', () => {
 
-    gulp.src('./src/lib/jquery/dist/jquery.min.js')
-        .pipe(gulp.dest('./dist/lib/jquery/dist'))
-
-    gulp.src('./src/lib/normalize.css/normalize.css')
-        .pipe(gulp.dest('./dist/lib/normalize.css'))
+    gulp.src(cnf.lib.css)
+        .pipe(plumber())
+        .pipe(importCss())
+        .pipe(cssnano())
+        .pipe(rename({
+            dirname: "",
+            basename: "lib",
+            prefix: "",
+            suffix: ".min",
+            extname: ".css"
+        }))
+        .pipe(gulp.dest('dist/lib/css'))
+        .pipe(browserSync.stream());
+        // gulp.src(cnf.libs.css)
+        // .pipe(plumber())
+        // .pipe(importCss())
+        // .pipe(cssnano())
+        // .pipe(rename({
+        //     dirname: "",
+        //     basename: "lib",
+        //     prefix: "",
+        //     suffix: ".min",
+        //     extname: ".css"
+        // }))
+        // .pipe(gulp.dest('dist/lib/css'))
+        // .pipe(browserSync.stream());
 });
 
 gulp.task('fonts', () => {
@@ -136,6 +160,7 @@ gulp.task('watch', () => {
     gulp.watch("src/img/**/*", ['img']);
     gulp.watch("src/**/*.html", ['html']);
     gulp.watch("./src/fonts/*.{eot,svg,ttf,woff,woff2}", ['fonts']);
+    gulp.watch("src/css/**/*.*", ['lib']);
 });
 
 
