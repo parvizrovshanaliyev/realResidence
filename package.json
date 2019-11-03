@@ -7,6 +7,14 @@
   },
   "keywords": [],
   "config": {
+    "src": {
+      "js": "src/js/main.js",
+      "css": "src/css/main.scss"
+    },
+    "dist": {
+      "js": "dist/js",
+      "css": "dist/css"
+    },
     "lib": {
       "js": "src/lib/js/lib.js",
       "css": "src/lib/css/lib.css"

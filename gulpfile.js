@@ -60,8 +60,8 @@ gulp.task('css', () => {
 
 
 gulp.task('js', () => {
-    return gulp.src('src/js/**/*.js')
-    
+    return gulp.src(cnf.src.js)
+
         .pipe(plumber())
         .pipe(sourcemaps.init({
             loadMaps: true
@@ -71,17 +71,17 @@ gulp.task('js', () => {
             extensions: 'js',
             hardFail: true
         }))
-        // .pipe(rename({
-        //     dirname: "",
-        //     basename: "main",
-        //     prefix: "",
-        //     suffix: ".min",
-        //     extname: ".js"
-        // }))
-        .pipe(concat('main.min.js'))
-        .pipe(minifyJS())
+        .pipe(rename({
+            dirname: "",
+            basename: "main",
+            prefix: "",
+            suffix: ".min",
+            extname: ".js"
+        }))
+        .pipe(uglify())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest(cnf.dist.js))
+
         .pipe(browserSync.stream());
 });
 
