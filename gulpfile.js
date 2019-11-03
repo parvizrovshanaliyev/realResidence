@@ -15,6 +15,7 @@ const notify = require("gulp-notify");
 const fileinclude = require('gulp-file-include');
 const babel = require('gulp-babel');
 const include = require('gulp-include')
+const rename = require("gulp-rename");
 // const cssnano = require('cssnano');
 
 // Static server
@@ -48,7 +49,7 @@ gulp.task('css', () => {
         .pipe(minifyCSS())
         .pipe(autoprefixer())
         .pipe(concat('main.min.css'))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 });
@@ -70,6 +71,13 @@ gulp.task('js', () => {
             extensions: 'js',
             hardFail: true
         }))
+        // .pipe(rename({
+        //     dirname: "",
+        //     basename: "main",
+        //     prefix: "",
+        //     suffix: ".min",
+        //     extname: ".js"
+        // }))
         .pipe(concat('main.min.js'))
         .pipe(minifyJS())
         .pipe(sourcemaps.write('.'))
