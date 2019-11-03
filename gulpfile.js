@@ -37,7 +37,7 @@ gulp.task('css', () => {
         }).on('error', sass.logError))
         .pipe(minifyCSS())
         .pipe(autoprefixer())
-        .pipe(concat('app.min.css'))
+        .pipe(concat('main.min.css'))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 });
