@@ -101,7 +101,7 @@ gulp.task('js', () => {
 
 gulp.task("html", () => {
     gulp
-        .src("src/**/*.html")
+        .src(cnf.src.html + '/*.html')
         .pipe(plumber())
         // .pipe(
         //     plumber({
@@ -117,7 +117,7 @@ gulp.task("html", () => {
         //     collapseWhitespace: true,
         //     removeComments: true
         // }))
-        .pipe(gulp.dest("dist"));
+        .pipe(gulp.dest(cnf.dist.html));
     // .pipe(browserSync.stream());
     gulp.watch("src/**/*.html").on("change", browserSync.reload);
 });
