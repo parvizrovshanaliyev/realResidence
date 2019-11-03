@@ -52,7 +52,9 @@ gulp.task('css', () => {
         }).on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: cnf.browserslist,
-            cascade: false
+            cascade: false,
+            //activation du prefixage pour grid
+            grid: true
         }))
         // .pipe(minifyCSS())
         .pipe(cssnano())

@@ -64,16 +64,21 @@
   },
   "browserslist": [
     "> 1%",
-    "ie >= 8",
+    "ie >= 11",
+    "ie_mob >= 11",
     "edge >= 15",
     "ie_mob >= 10",
     "ff >= 45",
     "chrome >= 45",
     "safari >= 7",
-    "opera >= 23",
+    "opera >= 13",
     "ios >= 7",
+    "ios_saf >= 13.1",
     "android >= 4",
+    "bb >= 10",
+    "firefox >= 70",
     "bb >= 10"
+    
   ]
 
 }
