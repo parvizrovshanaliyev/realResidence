@@ -21,8 +21,9 @@ const include = require('gulp-include')
 gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
-            baseDir: "dist"
-        }
+            baseDir: "dist/"
+        },
+        files:['dist/**/*.*']
     });
 });
 
