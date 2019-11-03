@@ -15,7 +15,7 @@ const notify = require("gulp-notify");
 // const cssnano = require('cssnano');
 
 // Static server
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
             baseDir: "dist"
@@ -29,12 +29,14 @@ gulp.task('bower', function () {
             directory: 'src/lib/'
         }))
         .pipe(gulp.dest('src'));
-        // .pipe(browserSync.stream());
+    // .pipe(browserSync.stream());
 });
 
 gulp.task('css', () => {
     return gulp.src('src/sass/**/*.scss')
-        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+        .pipe(plumber({
+            errorHandler: notify.onError("Error: <%= error.message %>")
+        }))
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'nested',
@@ -58,16 +60,22 @@ gulp.task('js', () => {
         .pipe(browserSync.stream());
 });
 
-gulp.task('html', () => {
-    gulp.src('src/**/*.html')
+gulp.task("html", () => {
+    gulp
+        .src("src/**/*.html")
+        .pipe(
+            plumber({
+                errorHandler: notify.onError("Error: <%= error.message %>")
+            })
+        )
         // .pipe(useref())
         // .pipe(minifyHTML({
         //     collapseWhitespace: true,
         //     removeComments: true
         // }))
-        .pipe(gulp.dest('dist'))
-        // .pipe(browserSync.stream());
-        gulp.watch('src/**/*.html').on("change",browserSync.reload);
+        .pipe(gulp.dest("dist"));
+    // .pipe(browserSync.stream());
+    gulp.watch("src/**/*.html").on("change", browserSync.reload);
 });
 
 gulp.task('img', () => {
@@ -78,18 +86,18 @@ gulp.task('img', () => {
 
 
 
-gulp.task('lib',() => {
-    
+gulp.task('lib', () => {
+
     gulp.src('./src/lib/jquery/dist/jquery.min.js')
-    .pipe(gulp.dest('./dist/lib/jquery/dist'))
+        .pipe(gulp.dest('./dist/lib/jquery/dist'))
 
     gulp.src('./src/lib/normalize.css/normalize.css')
-    .pipe(gulp.dest('./dist/lib/normalize.css'))
+        .pipe(gulp.dest('./dist/lib/normalize.css'))
 });
 
-gulp.task('fonts',() => {
+gulp.task('fonts', () => {
     return gulp.src('./src/fonts/*.{eot,svg,ttf,woff,woff2}')
-           .pipe(gulp.dest('./dist/fonts'))
+        .pipe(gulp.dest('./dist/fonts'))
 });
 
 gulp.task('delete', () => del(['dist/css', 'dist/js', 'dist/img', 'dist/**/*.html']));
