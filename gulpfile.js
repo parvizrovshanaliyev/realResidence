@@ -19,7 +19,8 @@ const rename = require("gulp-rename");
 const importCss = require('gulp-import-css');
 const cnf = require('./package.json').config;
 const cssnano = require('gulp-cssnano');
-// const cssnano = require('cssnano');
+const uglify = require('gulp-uglify');
+const pipeline = require('readable-stream').pipeline;
 
 // Static server
 gulp.task('browser-sync', function () {
@@ -60,12 +61,8 @@ gulp.task('css', () => {
 
 gulp.task('js', () => {
     return gulp.src('src/js/**/*.js')
+    
         .pipe(plumber())
-        // .pipe(
-        //     plumber({
-        //         errorHandler: notify.onError("Error: <%= error.message %>")
-        //     })
-        // )
         .pipe(sourcemaps.init({
             loadMaps: true
         }))
@@ -131,20 +128,25 @@ gulp.task('lib', () => {
             extname: ".css"
         }))
         .pipe(gulp.dest('dist/lib/css'))
+
+    gulp.src(cnf.lib.js)
+        .pipe(plumber())
+        .pipe(babel())
+        .pipe(include({
+            extensions: 'js',
+            hardFail: true
+        }))
+        .pipe(uglify())
+        .pipe(rename({
+            dirname: "",
+            basename: "lib",
+            prefix: "",
+            suffix: ".min",
+            extname: ".js"
+        }))
+        .pipe(gulp.dest('dist/lib/js'))
+
         .pipe(browserSync.stream());
-        // gulp.src(cnf.libs.css)
-        // .pipe(plumber())
-        // .pipe(importCss())
-        // .pipe(cssnano())
-        // .pipe(rename({
-        //     dirname: "",
-        //     basename: "lib",
-        //     prefix: "",
-        //     suffix: ".min",
-        //     extname: ".css"
-        // }))
-        // .pipe(gulp.dest('dist/lib/css'))
-        // .pipe(browserSync.stream());
 });
 
 gulp.task('fonts', () => {
