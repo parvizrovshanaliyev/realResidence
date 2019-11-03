@@ -38,9 +38,7 @@ gulp.task('bower', function () {
 
 gulp.task('css', () => {
     return gulp.src('src/sass/**/*.scss')
-        .pipe(plumber({
-            errorHandler: notify.onError("Error: <%= error.message %>")
-        }))
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'nested',
@@ -120,7 +118,7 @@ gulp.task('fonts', () => {
         .pipe(gulp.dest('./dist/fonts'))
 });
 
-gulp.task('delete', () => del(['dist/css', 'dist/js', 'dist/img', 'dist/**/*.html']));
+gulp.task('delete', () => del(['dist/css', 'dist/js', 'dist/**/*.html']));
 
 gulp.task('watch', () => {
     gulp.watch("src/sass/**/*.scss", ['css']);
