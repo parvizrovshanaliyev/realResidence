@@ -13,6 +13,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const notify = require("gulp-notify");
 const fileinclude = require('gulp-file-include');
+const babel = require('gulp-babel');
+const include = require('gulp-include')
 // const cssnano = require('cssnano');
 
 // Static server
@@ -55,8 +57,20 @@ gulp.task('css', () => {
 
 gulp.task('js', () => {
     return gulp.src('src/js/**/*.js')
-        .pipe(concat('app.min.js'))
+        .pipe(
+            plumber({
+                errorHandler: notify.onError("Error: <%= error.message %>")
+            })
+        )
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(babel())
+        .pipe(include({
+            extensions: 'js',
+            hardFail: true
+        }))
+        .pipe(concat('main.min.js'))
         .pipe(minifyJS())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.stream());
 });
