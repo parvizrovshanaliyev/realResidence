@@ -50,9 +50,20 @@ gulp.task('css', () => {
             precision: 10,
             includePaths: ['.']
         }).on('error', sass.logError))
-        .pipe(minifyCSS())
-        .pipe(autoprefixer())
-        .pipe(concat('main.min.css'))
+        .pipe(autoprefixer({
+            browsers: cnf.browserslist,
+            cascade: false
+        }))
+        // .pipe(minifyCSS())
+        .pipe(cssnano())
+        .pipe(rename({
+            dirname: "",
+            basename: "main",
+            prefix: "",
+            suffix: ".min",
+            extname: ".css"
+        }))
+        // .pipe(concat('main.min.css'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(cnf.dist.css))
 

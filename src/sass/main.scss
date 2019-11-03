@@ -1,8 +1,11 @@
 @import '_fontFaces';
 @import '_variables';
 @import '_mixin';
-@import 'partials/_home';
+@import 'partials/_home.scss';
 // @import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
 // @import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
-
+.main{
+    color: red;
+    display: flex;
+}
 
