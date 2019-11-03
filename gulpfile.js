@@ -9,6 +9,9 @@ const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const del = require('del');
 const runSequence = require('run-sequence');
+const sourcemaps = require('gulp-sourcemaps');
+const plumber = require('gulp-plumber');
+const notify = require("gulp-notify");
 // const cssnano = require('cssnano');
 
 // Static server
@@ -31,6 +34,8 @@ gulp.task('bower', function () {
 
 gulp.task('css', () => {
     return gulp.src('src/sass/**/*.scss')
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+        .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'nested',
             precision: 10,
@@ -39,6 +44,7 @@ gulp.task('css', () => {
         .pipe(minifyCSS())
         .pipe(autoprefixer())
         .pipe(concat('main.min.css'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 });
