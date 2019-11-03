@@ -23,7 +23,7 @@ gulp.task('browser-sync', function () {
         server: {
             baseDir: "dist/"
         },
-        files:['dist/**/*.*']
+        files: ['dist/**/*.*']
     });
 });
 
@@ -56,12 +56,15 @@ gulp.task('css', () => {
 
 gulp.task('js', () => {
     return gulp.src('src/js/**/*.js')
-        .pipe(
-            plumber({
-                errorHandler: notify.onError("Error: <%= error.message %>")
-            })
-        )
-        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(plumber())
+        // .pipe(
+        //     plumber({
+        //         errorHandler: notify.onError("Error: <%= error.message %>")
+        //     })
+        // )
+        .pipe(sourcemaps.init({
+            loadMaps: true
+        }))
         .pipe(babel())
         .pipe(include({
             extensions: 'js',
@@ -77,11 +80,12 @@ gulp.task('js', () => {
 gulp.task("html", () => {
     gulp
         .src("src/**/*.html")
-        .pipe(
-            plumber({
-                errorHandler: notify.onError("Error: <%= error.message %>")
-            })
-        )
+        .pipe(plumber())
+        // .pipe(
+        //     plumber({
+        //         errorHandler: notify.onError("Error: <%= error.message %>")
+        //     })
+        // )
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
