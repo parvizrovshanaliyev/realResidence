@@ -106,8 +106,6 @@ gulp.task('img', () => {
         .pipe(gulp.dest('dist/img'));
 });
 
-
-
 gulp.task('lib', () => {
 
     gulp.src('./src/lib/jquery/dist/jquery.min.js')
