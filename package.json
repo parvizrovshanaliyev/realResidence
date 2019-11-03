@@ -15,9 +15,9 @@
       "img": {
         "all": [
           "src/img/**/*.*",
-          "!src/img/noCompress/**/*.*"
+          "!src/img/noCompress/*.*"
         ],
-        "noCompress": "src/img/noCompress/**/*.*"
+        "noCompress": "src/img/noCompress/*.*"
       }
     },
     "dist": {

@@ -123,7 +123,7 @@ gulp.task("html", () => {
 });
 
 gulp.task('img', () => {
-    gulp.src(cnf.src.img.noCompress)
+    gulp.src(cnf.src.img.all)
         .pipe(imagemin([
             imagemin.gifsicle({
                 interlaced: true
@@ -146,7 +146,7 @@ gulp.task('img', () => {
         ]))
         .pipe(gulp.dest(cnf.dist.img));
 
-    gulp.src(cnf.src.img.all)
+    gulp.src(cnf.src.img.noCompress)
         .pipe(gulp.dest(cnf.dist.img))
 });
 
