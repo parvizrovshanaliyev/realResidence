@@ -21,6 +21,7 @@ const cnf = require('./package.json').config;
 const cssnano = require('gulp-cssnano');
 const uglify = require('gulp-uglify');
 const pipeline = require('readable-stream').pipeline;
+const imagemin = require('gulp-imagemin');
 
 // Static server
 gulp.task('browser-sync', function () {
@@ -75,7 +76,6 @@ gulp.task('css', () => {
 
 gulp.task('js', () => {
     return gulp.src(cnf.src.js)
-
         .pipe(plumber())
         .pipe(sourcemaps.init({
             loadMaps: true
@@ -123,9 +123,31 @@ gulp.task("html", () => {
 });
 
 gulp.task('img', () => {
-    gulp.src('src/img/**/*')
-        .pipe(minifyImg())
-        .pipe(gulp.dest('dist/img'));
+    gulp.src(cnf.src.img.noCompress)
+        .pipe(imagemin([
+            imagemin.gifsicle({
+                interlaced: true
+            }),
+            imagemin.jpegtran({
+                progressive: true
+            }),
+            imagemin.optipng({
+                optimizationLevel: 5
+            }),
+            imagemin.svgo({
+                plugins: [{
+                        removeViewBox: false
+                    },
+                    {
+                        cleanupIDs: false
+                    }
+                ]
+            })
+        ]))
+        .pipe(gulp.dest(cnf.dist.img));
+
+    gulp.src(cnf.src.img.all)
+        .pipe(gulp.dest(cnf.dist.img))
 });
 
 gulp.task('lib', () => {
@@ -172,7 +194,7 @@ gulp.task('delete', () => del(['dist/css', 'dist/js', 'dist/**/*.html']));
 
 gulp.task('watch', () => {
     gulp.watch("src/sass/**/*.scss", ['css']);
-    gulp.watch(cnf.src.js, ['js']);
+    gulp.watch([cnf.src.js, "src/js/components/**/*.*"], ['js']);
     gulp.watch("src/img/**/*", ['img']);
     gulp.watch("src/**/*.html", ['html']);
     gulp.watch(cnf.src.fonts, ['fonts']);
