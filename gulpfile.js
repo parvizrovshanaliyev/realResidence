@@ -55,7 +55,7 @@ gulp.task('css', () => {
         .pipe(concat('main.min.css'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(cnf.dist.css))
-        
+
         .pipe(browserSync.stream());
 });
 
@@ -151,19 +151,19 @@ gulp.task('lib', () => {
 });
 
 gulp.task('fonts', () => {
-    return gulp.src('./src/fonts/*.{eot,svg,ttf,woff,woff2}')
-        .pipe(gulp.dest('./dist/fonts'))
+    return gulp.src(cnf.src.fonts)
+        .pipe(gulp.dest(cnf.dist.fonts))
 });
 
 gulp.task('delete', () => del(['dist/css', 'dist/js', 'dist/**/*.html']));
 
 gulp.task('watch', () => {
     gulp.watch("src/sass/**/*.scss", ['css']);
-    gulp.watch("src/js/**/*.js", ['js']);
+    gulp.watch(cnf.src.js, ['js']);
     gulp.watch("src/img/**/*", ['img']);
     gulp.watch("src/**/*.html", ['html']);
-    gulp.watch("./src/fonts/*.{eot,svg,ttf,woff,woff2}", ['fonts']);
-    gulp.watch("src/css/**/*.*", ['lib']);
+    gulp.watch(cnf.src.fonts, ['fonts']);
+    gulp.watch([cnf.lib.css, cnf.lib.js], ['lib']);
 });
 
 
