@@ -12,6 +12,7 @@ const runSequence = require('run-sequence');
 const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const notify = require("gulp-notify");
+const fileinclude = require('gulp-file-include');
 // const cssnano = require('cssnano');
 
 // Static server
@@ -68,6 +69,10 @@ gulp.task("html", () => {
                 errorHandler: notify.onError("Error: <%= error.message %>")
             })
         )
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
         // .pipe(useref())
         // .pipe(minifyHTML({
         //     collapseWhitespace: true,
@@ -114,7 +119,6 @@ gulp.task('watch', () => {
 gulp.task('default', () => {
     runSequence(
         'delete',
-        'bower',
         'fonts',
         'lib',
         'html',
