@@ -42,7 +42,7 @@ gulp.task('bower', function () {
 });
 
 gulp.task('css', () => {
-    return gulp.src('src/sass/**/*.scss')
+    return gulp.src(cnf.src.css)
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
@@ -54,7 +54,8 @@ gulp.task('css', () => {
         .pipe(autoprefixer())
         .pipe(concat('main.min.css'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest(cnf.dist.css))
+        
         .pipe(browserSync.stream());
 });
 

@@ -9,11 +9,23 @@
   "config": {
     "src": {
       "js": "src/js/main.js",
-      "css": "src/css/main.scss"
+      "css": "src/css/main.scss",
+      "html": "src/",
+      "fonts": "src/fonts/*.{eot,svg,ttf,woff,woff2}",
+      "img": {
+        "all": [
+          "src/img/**/*.*",
+          "!src/img/noCompress/**/*.*"
+        ],
+        "noCompress":"src/img/noCompress/**/*.*"
+      }
     },
     "dist": {
       "js": "dist/js",
-      "css": "dist/css"
+      "css": "dist/css",
+      "html": "dist/",
+      "fonts": "dist/fonts",
+      "img": "dist/img"
     },
     "lib": {
       "js": "src/lib/js/lib.js",
