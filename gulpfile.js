@@ -9,6 +9,7 @@ const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const del = require('del');
 const runSequence = require('run-sequence');
+// const cssnano = require('cssnano');
 
 // Static server
 gulp.task('browser-sync', function() {
