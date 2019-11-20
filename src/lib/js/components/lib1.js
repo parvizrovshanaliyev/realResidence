@@ -1,2 +1,3 @@
-console.log("lib1");
+console.log("test");
+/*! test*/
 console.log("lib12");

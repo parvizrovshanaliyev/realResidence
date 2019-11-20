@@ -36,8 +36,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "jqeury": "0.0.1-security",
     "normalize.css": "^8.0.1",
-    "reset.css": "^2.0.2"
+    "reset.css": "^2.0.2",
+    "select2": "^4.0.12"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

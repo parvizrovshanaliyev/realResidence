@@ -1,6 +1,6 @@
 //=require components/test.js
-
-console.log("mainjs");
+/*! test main*/
+console.log("test");
 
 
 
