@@ -36,7 +36,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "reset.css": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
