@@ -1,0 +1,19 @@
+body,html,body{
+    font-family: $font-family-VarelaRound-Regular;
+}
+
+.main{
+    color: red;
+    display: flex;
+}
+ul {
+    li{
+        
+        a{
+            text-decoration: none;
+            color: gray;
+
+            // font-family: $font-family-VarelaRound-Regular;
+        }
+    }
+}
