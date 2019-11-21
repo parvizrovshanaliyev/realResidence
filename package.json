@@ -36,6 +36,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "jqeury": "0.0.1-security",
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1",
