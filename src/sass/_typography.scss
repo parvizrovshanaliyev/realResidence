@@ -1,8 +1,26 @@
 body,html,body{
     font-family: $font-family-VarelaRound-Regular;
-    a{
-        text-decoration: none;
-    }
+    box-sizing: border-box;
+    line-height: 120%;
+    font-size: 1rem;
+   
+}
+a{
+    text-decoration: none;
 }
 
+input,button,textarea{
+    outline: none;
+}
+
+.container{
+    width: 61.25rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row{
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+}
 

@@ -1,0 +1,6 @@
+/* @import url('components/lib1.css'); */
+@import url('../../../node_modules/normalize.css/normalize.css');
+@import url('../../../node_modules/reset.css/reset.css');
+@import url('../../../node_modules/select2/dist/css/select2.css');
+/* @import url('components/icons.min.css');
+@import url('components/fontawesome.css'); */

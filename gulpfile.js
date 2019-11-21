@@ -190,7 +190,7 @@ gulp.task('fonts', () => {
         .pipe(gulp.dest(cnf.dist.fonts))
 });
 
-gulp.task('delete', () => del(['dist/css', 'dist/js', 'dist/**/*.html']));
+gulp.task('delete', () => del(['dist/css','lib', 'dist/js', 'dist/**/*.html']));
 
 gulp.task('watch', () => {
     gulp.watch("src/sass/**/*.scss", ['css']);
@@ -206,12 +206,12 @@ gulp.task('default', () => {
     runSequence(
         'delete',
         'fonts',
-        'lib',
         'html',
         'css',
+        'lib',
         'js',
         'img',
+        'watch',
         'browser-sync',
-        'watch'
     );
 });
