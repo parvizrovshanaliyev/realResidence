@@ -55,13 +55,17 @@ header.home-page {
                 a {
                     color: #2d7d27;
                     font-size: 14px;
-                    float: right;
                 }
             }
 
             li:last-child {
                 margin-right: 0;
+                float: right;
+a{
+     font-size: 1rem;
+}
             }
+
 
             li:hover {
                 background-color: #46a13f;
@@ -69,6 +73,10 @@ header.home-page {
                 a {
                     color: white;
                 }
+            }
+            li:last-child:hover {
+                background-color: transparent;
+
             }
 
             
