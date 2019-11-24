@@ -92,8 +92,9 @@ header.home-page {
     //logo
     &__logo {
         flex: 2;
-        height: 110px;
+        height: 6.875rem;
         background-color: $dark;
+        overflow: hidden;
 
         &__area {
             display: flex;
@@ -114,7 +115,7 @@ header.home-page {
         flex-direction: column;
 
         &__up {
-            background-color: $blue;
+            // background-color: $blue;
             display: flex;
             flex-direction: row;
             height: 3.75rem;
@@ -124,17 +125,15 @@ header.home-page {
                 background-color: $blue;
                 display: flex;
                 justify-content: center;
+                margin-right: 1px;
 
                 .contact-area {
                     align-self: center;
                     color: white;
                     font-size: 0.875rem;
-
-                    &__icon {
-                        padding-top: 0.375rem;
-                        color: #0080bc;
-
-                    }
+                    display: flex;
+                    align-items: center;
+                    
                 }
             }
 
@@ -147,39 +146,43 @@ header.home-page {
                 justify-content: flex-end;
 
 
-                .searchBar__links {
-                    padding: 0.875rem;
-                    li {
-                        display: inline-block;
-                        padding: 0.5rem 1.125rem;
-                        border-right: 0.0625rem solid $light;
-                        a {
-                            font-size: 0.875rem;
-                            color: #7c848b;
+                &__content{
+                    margin-bottom: 1px;
+
+                    .searchBar__links {
+                        padding: 0.875rem;
+                        li {
+                            display: inline-block;
+                            padding: 0.5rem 1.125rem;
+                            border-right: 0.0625rem solid $light;
+                            a {
+                                font-size: 0.875rem;
+                                color: #7c848b;
+                            }
+                            &:hover a {
+                                color: black;
+                                transition: all 0.3s ease-in;
+                            }
                         }
-                        &:hover a {
-                            color: black;
-                            transition: all 0.3s ease-in;
+    
+                        li:last-child {
+                            border: 0;
                         }
                     }
-
-                    li:last-child {
-                        border: 0;
-                    }
-                }
-
-                .searchBar__social-links {
-                    padding: 0.8125rem;
-                    li {
-                        display: inline-block;
-                        padding: 0.6875rem;
-                        a {
-                            color: #7c848b;
-                            font-size: 0.875rem;
-                        }
-                        &:hover a {
-                            color: black;
-                            transition: all 0.3s ease-in;
+    
+                    .searchBar__social-links {
+                        padding: 0.8125rem;
+                        li {
+                            display: inline-block;
+                            padding: 0.6875rem;
+                            a {
+                                color: #7c848b;
+                                font-size: 0.875rem;
+                            }
+                            &:hover a {
+                                color: black;
+                                transition: all 0.3s ease-in;
+                            }
                         }
                     }
                 }
@@ -189,16 +192,29 @@ header.home-page {
         }
 
         &__down {
-            background-color: green;
-            background-color: green;
+            // background-color: green;
+            display: flex;
+            flex-direction: row;
+            height: 3.125rem;
 
             .searchBar__down__select-form {
-                select {}
-
+                flex: 1;
+                background-color:#dfe7ee; 
+                padding: 0.9375rem;
+                margin-right: 1px;
+                select {
+                    font-size: 0.875rem;
+                    background-color:transparent;
+                    color:#4a525d;
+                    text-transform: uppercase;
+                    border:none;
+                }
                 option {}
             }
 
             .searchBar__down__button {
+                display: flex;
+                flex-direction: row;
                 &__first {}
 
                 &__second {}
