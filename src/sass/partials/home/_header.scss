@@ -125,7 +125,7 @@ header.home-page {
                 background-color: $blue;
                 display: flex;
                 justify-content: center;
-                margin-right: 0.0938rem;
+                margin-right: 0.0625rem;
 
                 .contact-area {
                     align-self: center;
@@ -201,14 +201,21 @@ header.home-page {
         &__down {
             display: flex;
             flex-direction: row;
-            background-color: green;
             margin-top: 1px;
             height: 49px;
 
             .searchBar__down__select-form {
                 flex: 1;
+                background-color: #dfe7ee;
+                margin-right: 1px;
 
-                select {}
+                select {
+                    color: #4a525d;
+                    text-transform: uppercase;
+                    font-size: 0.875rem;
+                    border: none;
+                    background-color: transparent;
+                }
 
                 option {}
             }
@@ -216,7 +223,6 @@ header.home-page {
             .searchBar__down__button {
                 display: flex;
                 flex-direction: row;
-
                 &__first {}
 
                 &__second {}
