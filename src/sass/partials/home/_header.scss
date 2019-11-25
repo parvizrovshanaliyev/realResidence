@@ -201,9 +201,12 @@ header.home-page {
 
             .searchBar__down__select-form {
                 flex: 1;
+                position: relative;
+                display: block;
+                overflow: hidden;
+                line-height: 3;
                 background-color: #dfe7ee;
-                margin-right: 1px;
-                padding: 0.9375rem 0.9375rem;
+                margin-right: 0.0625rem;
                 background-image: url(../img/arrow.png);
                 background-repeat: no-repeat;
                 background-position-x: 90%;
@@ -212,21 +215,33 @@ header.home-page {
 
                 select {
                     width: 100%;
+                    height: 100%;
                     color: #4a525d;
                     text-transform: uppercase;
                     font-size: 0.875rem;
                     border: none;
                     background-color: transparent;
-                    // -webkit-appearance: none;
-                    // -moz-appearance: none;
+                    padding: 0 0 0 0.9375rem;
+                    letter-spacing: 0.05rem;
                     appearance: none;
+                    transition: all .2s ease-in;
+
+                    &:hover {
+                        background: #c3ccd45e !important;
+                    }
+
+                    option {
+                        background-color: #c3ccd45e;
+                        border: none;
+                        outline: none;
+                    }
                 }
             }
 
             .searchBar__down__button {
                 display: flex;
                 flex-direction: row;
-                flex: 1.9;
+                flex: 1.6;
                 font-size: 0.875rem;
 
                 &__first {
@@ -289,16 +304,106 @@ header.home-page {
         flex: 8;
         display: flex;
         flex-direction: column;
+        // .searchBar__footer__select-form {
+        //     flex: 1;
+        //     position: relative;
+        //     display: block;
+        //     overflow: hidden;
+        //     line-height: 3;
+        //     background-color: #dfe7ee;
+        //     margin-right: 0.0625rem;
+        //     background-image: url(../img/arrow.png);
+        //     background-repeat: no-repeat;
+        //     background-position-x: 90%;
+        //     background-position-Y: 50%;
 
+        //     select {
+        //         width: 100%;
+        //         height: 100%;
+        //         color: #4a525d;
+        //         text-transform: uppercase;
+        //         font-size: 0.875rem;
+        //         border: none;
+        //         background-color: transparent;
+        //         padding: 0 0 0 0.9375rem;
+        //         letter-spacing: 0.05rem;
+        //         appearance: none;
+        //         transition: all .2s ease-in;
+
+        //         &:hover {
+        //             background: #c3ccd45e !important;
+        //         }
+
+        //         option {
+        //             background-color: #c3ccd45e;
+        //             border: none;
+        //             outline: none;
+        //         }
+        //     }
+
+        //     input{
+        //         border: none;
+        //         color: #4a525d;
+        //         text-transform: uppercase;
+        //         font-size: 0.875rem;
+        //         width: 100%;
+        //         height: 100%;
+        //         text-indent: 15px;
+        //         background-color: #dfe7ee;
+        //         &:hover {
+        //             background: #c3ccd45e !important;
+        //         }
+        //     }
+        //     input:last-child{
+        //         flex: 1.6;
+        //     }
+        // }
         &__up {
             display: flex;
             flex-direction: row;
             height: 3.0625rem;
 
+            .searchBar__footer__select-form {
+                flex: 1;
+                position: relative;
+                display: block;
+                overflow: hidden;
+                line-height: 3;
+                background-color: #dfe7ee;
+                margin-right: 0.0625rem;
+                background-image: url(../img/arrow.png);
+                background-repeat: no-repeat;
+                background-position-x: 90%;
+                background-position-Y: 50%;
+    
+                select {
+                    width: 100%;
+                    height: 100%;
+                    color: #4a525d;
+                    text-transform: uppercase;
+                    font-size: 0.875rem;
+                    border: none;
+                    background-color: transparent;
+                    padding: 0 0 0 0.9375rem;
+                    letter-spacing: 0.05rem;
+                    appearance: none;
+                    transition: all .2s ease-in;
+    
+                    &:hover {
+                        background: #c3ccd45e !important;
+                    }
+    
+                    option {
+                        background-color: #c3ccd45e;
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
             .searchBar__footer__select-form__devide {
                 display: flex;
                 flex-direction: row;
-                flex: 1.9;
+                flex: 1.6;
 
                 .searchBar__footer__select-form {
                     flex: 1;
@@ -317,55 +422,83 @@ header.home-page {
             height: 3.0625rem;
             margin-top: 0.0625rem;
 
-            .searchBar__footer__select-form__input {
+            .searchBar__footer__select-form {
+                flex: 1;
+                position: relative;
+                display: block;
+                overflow: hidden;
+                line-height: 3;
                 background-color: #dfe7ee;
                 margin-right: 0.0625rem;
-                padding: 0.9375rem 0.9375rem;
-
-                input {
-                    border: none;
-                    padding: 0px;
-                    margin: 0px;
-                    background-color: transparent;
+                background-image: url(../img/arrow.png);
+                background-repeat: no-repeat;
+                background-position-x: 90%;
+                background-position-Y: 50%;
+    
+                select {
+                    width: 100%;
+                    height: 100%;
                     color: #4a525d;
                     text-transform: uppercase;
                     font-size: 0.875rem;
+                    border: none;
+                    background-color: transparent;
+                    padding: 0 0 0 0.9375rem;
+                    letter-spacing: 0.05rem;
+                    appearance: none;
+                    transition: all .2s ease-in;
+    
+                    &:hover {
+                        background: #c3ccd45e !important;
+                    }
+    
+                    option {
+                        background-color: #c3ccd45e;
+                        border: none;
+                        outline: none;
+                    }
+                }
+    
+                
+                // input:last-child{
+                //     flex: 1.6;
+                // }
+            }
+
+            .searchBar__footer__select-form__input{
+                flex: 1;
+                position: relative;
+                display: block;
+                overflow: hidden;
+                line-height: 3;
+                background-color: #dfe7ee;
+                margin-right: 0.0625rem;
+
+                input{
+                    border: none;
+                    color: #4a525d;
+                    text-transform: uppercase;
+                    font-size: 0.875rem;
+                    width: 100%;
+                    height: 100%;
+                    text-indent: 15px;
+                    background-color: #dfe7ee;
+                    &:hover {
+                        background: #c3ccd45e !important;
+                    }
                 }
             }
 
-            .searchBar__footer__select-form__input:last-child {
-                flex: 1.7;
-                margin-right: 0rem;
+            .searchBar__footer__select-form__flex-end{
+                flex: 1.6;
+                .searchBar__footer__select-form__input{
+                    height: 100%;
+                    width: 100%;
+                }
             }
         }
 
-        .searchBar__footer__select-form {
-            flex: 1;
-            position: relative;
-            display: block;
-            overflow: hidden;
-            line-height: 3;
-            background-color: #dfe7ee;
-            margin-right: 0.0625rem;
-            background-image: url(../img/arrow.png);
-            background-repeat: no-repeat;
-            background-position-x: 90%;
-            background-position-Y: 50%;
-
-            select {
-                width: 100%;
-                color: #4a525d;
-                text-transform: uppercase;
-                font-size: 0.875rem;
-                border: none;
-                background-color: transparent;
-                padding: 0 0 0 0.9375rem;
-
-                // -webkit-appearance: none;
-                // -moz-appearance: none;
-                appearance: none;
-            }
-        }
+        
     }
 }
 
