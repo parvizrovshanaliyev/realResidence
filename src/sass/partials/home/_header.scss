@@ -152,14 +152,17 @@ header.home-page {
 
                 .searchBar__links {
                     padding: 0.875rem;
+
                     li {
                         display: inline-block;
                         padding: 0.5rem 1.125rem;
                         border-right: 0.0625rem solid $light;
+
                         a {
                             font-size: 0.875rem;
                             color: #7c848b;
                         }
+
                         &:hover a {
                             color: black;
                             transition: all 0.3s ease-in;
@@ -173,13 +176,16 @@ header.home-page {
 
                 .searchBar__social-links {
                     padding: 0.8125rem;
+
                     li {
                         display: inline-block;
                         padding: 0.6875rem;
+
                         a {
                             color: #7c848b;
                             font-size: 0.875rem;
                         }
+
                         &:hover a {
                             color: black;
                             transition: all 0.3s ease-in;
@@ -192,16 +198,22 @@ header.home-page {
         }
 
         &__down {
-            background-color: green;
+            display: flex;
+            flex-direction: row;
+            
             background-color: green;
 
             .searchBar__down__select-form {
+                flex: 1;
                 select {}
 
                 option {}
             }
 
             .searchBar__down__button {
+                display: flex;
+                flex-direction: row;
+
                 &__first {}
 
                 &__second {}
