@@ -94,6 +94,7 @@ header.home-page {
         flex: 2;
         height: 110px;
         background-color: $dark;
+        overflow: hidden;
 
         &__area {
             display: flex;
@@ -200,11 +201,13 @@ header.home-page {
         &__down {
             display: flex;
             flex-direction: row;
-            
             background-color: green;
+            margin-top: 1px;
+            height: 49px;
 
             .searchBar__down__select-form {
                 flex: 1;
+
                 select {}
 
                 option {}
