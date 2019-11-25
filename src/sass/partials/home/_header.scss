@@ -123,11 +123,11 @@ header.home-page {
             &__contact {
                 flex: 2;
                 background-color: $blue;
-                margin-right:1px;
-                padding-top: 0.9375rem ;
-                padding-bottom: 0.9375rem ;
+                margin-right: 1px;
+                padding-top: 0.9375rem;
+                padding-bottom: 0.9375rem;
                 padding-right: 4px;
-                padding-left: 0.9375rem ;
+                padding-left: 0.9375rem;
 
                 .contact-area {
                     color: white;
@@ -231,18 +231,22 @@ header.home-page {
                 flex-direction: row;
                 flex: 1.9;
                 font-size: 0.875rem;
+
                 &__first {
                     background-color: #f4903f;
                     flex: 1;
                     padding: 15px;
                     text-align: center;
-                    &:hover{
+
+                    &:hover {
                         opacity: 0.9;
                     }
-                    a{
+
+                    a {
                         color: #c45706;
                         text-transform: uppercase;
-                        i{
+
+                        i {
                             margin-right: 0.3125rem;
                         }
                     }
@@ -253,37 +257,19 @@ header.home-page {
                     flex: 1;
                     padding: 15px;
                     text-align: center;
-                    &:hover{
+
+                    &:hover {
                         opacity: 0.9;
                     }
-                    a{
+
+                    a {
                         color: #ffffff;
                         text-transform: uppercase;
-                        i{
+
+                        i {
                             margin-right: 0.3125rem;
                         }
                     }
-                    
-                }
-
-                a {
-                    .fa.fa-plus-circle {}
-
-                    &:hover {}
-
-                    &:active {}
-
-                    &:focus {}
-                }
-
-                a {
-                    .fa.fa-search {}
-
-                    &:hover {}
-
-                    &:active {}
-
-                    &:focus {}
                 }
             }
         }
@@ -291,16 +277,29 @@ header.home-page {
 
 }
 
-
+/*Header details */
+/*Header footer */
 .home-page__details__footer {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+
     &__up {
+        display: flex;
+        flex-direction: row;
+        background-color: gray;
+        height:49px;
+
         .searchBar__footer__select-form {
+
             select {}
 
             option {}
         }
 
         .searchBar__footer__select-form__devide {
+
+
             &__second {}
 
             select {
@@ -310,6 +309,11 @@ header.home-page {
     }
 
     &__down {
+        display: flex;
+        flex-direction: row;
+        background-color: green;
+        height:49px;
+
         &__select-form {
             input {}
 
@@ -319,6 +323,9 @@ header.home-page {
         }
     }
 }
+
+/*Header footer */
+
 
 
 
