@@ -114,7 +114,7 @@ header.home-page {
         flex-direction: column;
 
         &__up {
-            background-color: $blue;
+            // background-color: $blue;
             display: flex;
             flex-direction: row;
             height: 3.75rem;
@@ -124,6 +124,7 @@ header.home-page {
                 background-color: $blue;
                 display: flex;
                 justify-content: center;
+                margin-right: 0.0938rem;
 
                 .contact-area {
                     align-self: center;
