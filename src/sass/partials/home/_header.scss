@@ -230,17 +230,38 @@ header.home-page {
                 display: flex;
                 flex-direction: row;
                 flex: 1.9;
+                font-size: 0.875rem;
                 &__first {
                     background-color: #f4903f;
+                    flex: 1;
+                    padding: 15px;
+                    text-align: center;
+                    &:hover{
+                        opacity: 0.9;
+                    }
                     a{
                         color: #c45706;
+                        text-transform: uppercase;
+                        i{
+                            margin-right: 0.3125rem;
+                        }
                     }
                 }
 
                 &__second {
                     background-color: $dark;
+                    flex: 1;
+                    padding: 15px;
+                    text-align: center;
+                    &:hover{
+                        opacity: 0.9;
+                    }
                     a{
                         color: #ffffff;
+                        text-transform: uppercase;
+                        i{
+                            margin-right: 0.3125rem;
+                        }
                     }
                     
                 }
