@@ -12,6 +12,9 @@ a{
 select,input,button,textarea{
     outline: none;
 }
+select{
+    cursor: pointer;
+}
 
 .container{
     width: 1140px;
