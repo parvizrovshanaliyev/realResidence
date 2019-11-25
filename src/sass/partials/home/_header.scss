@@ -143,51 +143,65 @@ header.home-page {
                 height: 3.75rem;
                 display: flex;
                 flex-direction: row;
-                justify-content: flex-end;
+
+                // justify-content: flex-end;
                 // margin-right: 1px;
+                &__content {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    &__first {
+                        .searchBar__links {
+                            padding: 0.875rem;
 
-                .searchBar__links {
-                    padding: 0.875rem;
+                            li {
+                                display: inline-block;
+                                padding: 0.5rem 1.125rem;
+                                border-right: 0.0625rem solid $light;
 
-                    li {
-                        display: inline-block;
-                        padding: 0.5rem 1.125rem;
-                        border-right: 0.0625rem solid $light;
+                                a {
+                                    font-size: 0.875rem;
+                                    color: #7c848b;
+                                }
 
-                        a {
-                            font-size: 0.875rem;
-                            color: #7c848b;
-                        }
+                                &:hover a {
+                                    color: black;
+                                    transition: all 0.3s ease-in;
+                                }
+                            }
 
-                        &:hover a {
-                            color: black;
-                            transition: all 0.3s ease-in;
+                            li:last-child {
+                                border: 0;
+                            }
                         }
                     }
 
-                    li:last-child {
-                        border: 0;
+                    &__second {
+                        .searchBar__social-links {
+                            padding: 0.8125rem;
+
+                            li {
+                                display: inline-block;
+                                padding: 0.6875rem;
+
+                                a {
+                                    color: #7c848b;
+                                    font-size: 0.875rem;
+                                }
+
+                                &:hover a {
+                                    color: black;
+                                    transition: all 0.3s ease-in;
+                                }
+                            }
+                        }
                     }
                 }
 
-                .searchBar__social-links {
-                    padding: 0.8125rem;
 
-                    li {
-                        display: inline-block;
-                        padding: 0.6875rem;
 
-                        a {
-                            color: #7c848b;
-                            font-size: 0.875rem;
-                        }
 
-                        &:hover a {
-                            color: black;
-                            transition: all 0.3s ease-in;
-                        }
-                    }
-                }
 
 
             }
@@ -375,7 +389,7 @@ header.home-page {
                 background-repeat: no-repeat;
                 background-position-x: 90%;
                 background-position-Y: 50%;
-    
+
                 select {
                     width: 100%;
                     height: 100%;
@@ -388,11 +402,11 @@ header.home-page {
                     letter-spacing: 0.05rem;
                     appearance: none;
                     transition: all .2s ease-in;
-    
+
                     &:hover {
                         background: #c3ccd45e !important;
                     }
-    
+
                     option {
                         background-color: #c3ccd45e;
                         border: none;
@@ -400,6 +414,7 @@ header.home-page {
                     }
                 }
             }
+
             .searchBar__footer__select-form__devide {
                 display: flex;
                 flex-direction: row;
@@ -434,7 +449,7 @@ header.home-page {
                 background-repeat: no-repeat;
                 background-position-x: 90%;
                 background-position-Y: 50%;
-    
+
                 select {
                     width: 100%;
                     height: 100%;
@@ -447,25 +462,25 @@ header.home-page {
                     letter-spacing: 0.05rem;
                     appearance: none;
                     transition: all .2s ease-in;
-    
+
                     &:hover {
                         background: #c3ccd45e !important;
                     }
-    
+
                     option {
                         background-color: #c3ccd45e;
                         border: none;
                         outline: none;
                     }
                 }
-    
-                
+
+
                 // input:last-child{
                 //     flex: 1.6;
                 // }
             }
 
-            .searchBar__footer__select-form__input{
+            .searchBar__footer__select-form__input {
                 flex: 1;
                 position: relative;
                 display: block;
@@ -474,7 +489,7 @@ header.home-page {
                 background-color: #dfe7ee;
                 margin-right: 0.0625rem;
 
-                input{
+                input {
                     border: none;
                     color: #4a525d;
                     text-transform: uppercase;
@@ -483,22 +498,24 @@ header.home-page {
                     height: 100%;
                     text-indent: 15px;
                     background-color: #dfe7ee;
+
                     &:hover {
                         background: #c3ccd45e !important;
                     }
                 }
             }
 
-            .searchBar__footer__select-form__flex-end{
+            .searchBar__footer__select-form__flex-end {
                 flex: 1.6;
-                .searchBar__footer__select-form__input{
+
+                .searchBar__footer__select-form__input {
                     height: 100%;
                     width: 100%;
                 }
             }
         }
 
-        
+
     }
 }
 
